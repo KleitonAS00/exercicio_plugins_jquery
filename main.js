@@ -7,6 +7,10 @@ $(document).ready(function() {
         placeholder: '_____-__'
     })
 
+    $('#telefone').mask('(00) 0000-0000', {
+        placeholder: '(__) ____-____'
+    })
+
     $('form').validate({
         rules: {
             cpf: {
@@ -15,10 +19,14 @@ $(document).ready(function() {
             cep: {
                 required: true
             },
+            telefone: {
+                required: true
+            },
         },
         messages: {
             cep: 'CEP inválido ou não preenchido',
             cpf: 'CPF inválido ou não preenchido',
+            telefone: 'Telefone inválido ou não preenchido'
         },
         submitHandler: function(form) {
             console.log(form)
